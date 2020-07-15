@@ -30,7 +30,8 @@ export default class BottleSong {
     if (this.noBottles()) {
       return 'Go to the store, steal some more'
     } else {
-      return `Take ${this.oneBottle() ? 'it' : 'one'} down, pass it around`
+      const toTake = this.oneBottle() ? 'it' : 'one'
+      return `Take ${toTake} down, pass it around`
     }
   }
 
