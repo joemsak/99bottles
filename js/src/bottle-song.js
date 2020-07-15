@@ -32,7 +32,7 @@ export default class BottleSong {
   }
 
   nextStatus() {
-    if (this.bottles == 0) {
+    if (this.noBottles()) {
       this.bottles = this.default
     } else {
       this.bottles -= 1
