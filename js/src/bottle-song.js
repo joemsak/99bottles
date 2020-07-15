@@ -1,9 +1,4 @@
 export default class BottleSong {
-  constructor() {
-    this.default = 99
-    this.bottles = 0
-  }
-
   verse(bottles) {
     switch(bottles) {
       case 0:
