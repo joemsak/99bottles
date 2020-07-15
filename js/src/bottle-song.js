@@ -20,7 +20,10 @@ export default class BottleSong {
   }
 
   getSubject() {
-    return `${this.howMany()} ${this.quantified()} of beer`
+    const howMany = this.noBottles() ? 'No more' : this.bottles
+    const quantified = this.oneBottle() ? 'bottle' : 'bottles'
+
+    return `${howMany} ${quantified} of beer`
   }
 
   getAction() {
@@ -39,14 +42,6 @@ export default class BottleSong {
     }
 
     return this.usualStatus({ usePeriod: true })
-  }
-
-  howMany() {
-    return this.noBottles() ? 'No more' : this.bottles
-  }
-
-  quantified() {
-    return this.oneBottle() ? 'bottle' : 'bottles'
   }
 
   noBottles() {
