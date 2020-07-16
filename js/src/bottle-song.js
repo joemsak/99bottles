@@ -15,20 +15,21 @@ export default class BottleSong {
           "Take it down, pass it around",
           "No more bottles of beer on the wall."
         ].join('\n')
-      case 2:
-        return [
-          "2 bottles of beer on the wall",
-          "2 bottles of beer",
-          "Take one down, pass it around",
-          "1 bottle of beer on the wall."
-        ].join('\n')
       default:
         return [
           `${bottles} bottles of beer on the wall`,
           `${bottles} bottles of beer`,
           "Take one down, pass it around",
-          `${bottles - 1} bottles of beer on the wall.`
+          `${bottles - 1} ${this.container(bottles - 1)} of beer on the wall.`
         ].join('\n')
+    }
+  }
+
+  container(number) {
+    if (number === 1) {
+      return 'bottle'
+    } else {
+      return 'bottles'
     }
   }
 }
