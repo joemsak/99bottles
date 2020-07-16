@@ -73,6 +73,10 @@ class BottleNumber6 extends BottleNumber {
   quantity() {
     return 1
   }
+
+  pronoun() {
+    return 'a bottle'
+  }
 }
 
 export default class BottleSong {

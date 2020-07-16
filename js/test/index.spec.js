@@ -33,7 +33,7 @@ describe('BottleSong', () => {
     it('returns the six-pack case', () => {
       const expected = '1 six-pack of beer on the wall\n' +
         '1 six-pack of beer\n' +
-        'Take one down, pass it around\n' +
+        'Take a bottle down, pass it around\n' +
         '5 bottles of beer on the wall.'
 
       expect(new BottleSong().verse(6)).to.equal(expected)
