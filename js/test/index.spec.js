@@ -30,8 +30,36 @@ describe('BottleSong', () => {
       expect(new BottleSong().verse(2)).to.equal(expected)
     })
 
+    it('returns the six-pack case', () => {
+      const expected = '1 six-pack of beer on the wall\n' +
+        '1 six-pack of beer\n' +
+        'Take one down, pass it around\n' +
+        '5 bottles of beer on the wall.'
+
+      expect(new BottleSong().verse(6)).to.equal(expected)
+    })
+
+    it('returns the 7 case', () => {
+      const expected = '7 bottles of beer on the wall\n' +
+        '7 bottles of beer\n' +
+        'Take one down, pass it around\n' +
+        '1 six-pack of beer on the wall.'
+
+      expect(new BottleSong().verse(7)).to.equal(expected)
+    })
+
+
     it('returns the default bottles case', () => {
-      for (let n = 3; n <= 99; n++) {
+      for (let n = 3; n <= 5; n++) {
+        const expected = `${n} bottles of beer on the wall\n` +
+          `${n} bottles of beer\n` +
+          'Take one down, pass it around\n' +
+          `${n - 1} bottles of beer on the wall.`
+
+        expect(new BottleSong().verse(n)).to.equal(expected)
+      }
+
+      for (let n = 8; n <= 99; n++) {
         const expected = `${n} bottles of beer on the wall\n` +
           `${n} bottles of beer\n` +
           'Take one down, pass it around\n' +
